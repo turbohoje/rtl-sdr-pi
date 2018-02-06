@@ -1,0 +1,13 @@
+[Unit]
+Description = RTL SDR TCP Service
+After = network.target
+
+[Service]
+ExecStart = /usr/local/bin/rtl_tcp -a 0.0.0.0
+Type=simple
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy = multi-user.target
+Alias = rtl_sdr.service
