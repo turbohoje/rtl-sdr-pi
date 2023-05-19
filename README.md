@@ -20,16 +20,24 @@ power meter reading
   - blacklist an additional module
     - vim /etc/modprobe.d/blacklist-rtl8xxxu.conf
     - add `blacklist dvb_usb_rtl28xxu` 
-- install `go get github.com/bemasher/rtlamr` (go < 1.16 that comes with raspian)
-
+- install one of the following
+  - bemasher's rtlamr `go get github.com/bemasher/rtlamr` (go < 1.16 that comes with raspian)
+  - https://github.com/turbohoje/rtlamr-prometheus
 ### to test
 - on window run `rtl_tcp`
-- in another run `./rtlamr-pi -format=json -filterid=3806796,65560195` 
+- in another run `rtlamr -filterid=98883030,3806796 -msgtype=scm,scm+` 
 
 
 ### meters
+Type 4: ?? water ??
+
+SCM Type 7: electrical
+
+SCM+ Type 156: gas
+
+
 #### filter id 3806796
 ![electric](img/electrical.jpg)
 
 #### filter id 65560195
-???
+![gas](img/gas.png)
